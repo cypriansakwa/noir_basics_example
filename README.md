@@ -1,13 +1,32 @@
-### Introduction
+# 🧮 Noir Basics Example
 
-An example repo to verify Noir circuits (with bb backend) using a Solidity verifier.
+An example repository demonstrating how to verify Noir circuits using a Solidity verifier and the `bb` backend.
 
-- `/circuits` - contains the Noir circuits.
-- `/contract` - Foundry project with a Solidity verifier and a Test contract that reads proof from a file and verifies it.
-- `/js` - JS code to generate proof and save as a file.
+---
 
+### 🗂️ Project Structure
 
-Tested with Noir 1.0.0-beta.3 and bb 0.82.2
+- `/circuits` — Contains the Noir circuit and logic.
+- `/contract` — Foundry project with Solidity verifier and test contract.
+- `/js` — JavaScript code for generating and saving proofs using `bb.js`.
+
+Tested with:
+- Noir `v1.0.0-beta.3`
+- `bb` CLI `v0.82.2`
+
+---
+
+## 🧠 Circuit Logic
+
+The Noir circuit proves that:
+$x * 2 + y ==$ expected
+
+Where:
+- `x` is a **private input**
+- `y` and `expected` are **public inputs**
+
+This lets a user prove correctness without revealing their private input `x`.
+
 ## Circuit Logic
 
 The Noir circuit checks if `x * 2 + y == expected`, where:
